@@ -10,19 +10,13 @@ export const Timer = () =>
     {
         const id = setInterval( () =>
         {            
-            if(counter > 0)
-            {
-                setCounter(counter+1);
-            }
-            else
-            {
-               clearInterval(id)
-            }
+            
+            setCounter((p) => p+1 );
             
             
         },1000)
     
-    },[counter])
+    },[])
 
   
   
@@ -31,8 +25,8 @@ export const Timer = () =>
     const stop = () =>
     {
         setStatus(false)
-        console.log("stop")
-        setCounter(0);
+        console.log("stop");
+        
     }
     
     const start = () =>
@@ -42,7 +36,9 @@ export const Timer = () =>
     }
     const reset = () =>
     {
+        //setCounter(1);
         console.log("reset")
+        setCounter(0);
     }
 
     console.log(status)
